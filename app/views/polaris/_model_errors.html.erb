@@ -1,0 +1,10 @@
+<% if model.errors.any? %>
+  <%= polaris_banner status: 'critical', title: "#{ pluralize(model.errors.count, "error") } prohibited this #{ model.class.name.humanize } from being saved" do %>
+    <ul>
+      <% model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <p>&nbsp;</p>
+<% end %>

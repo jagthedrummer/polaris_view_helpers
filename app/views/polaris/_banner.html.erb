@@ -1,0 +1,13 @@
+<div class="Polaris-Banner Polaris-Banner--status<%= options[:status].titleize %>" tabindex="0" role="banner <%= options[:status] %>" aria-labelledby="Banner2Heading" aria-describedby="Banner2Content">
+  <div class="Polaris-Banner__Ribbon">
+    <%= render "polaris/banner_icons/#{options[:status]}" %>
+  </div>
+  <div>
+    <div class="Polaris-Banner__Heading" id="Banner2Heading">
+      <p class="Polaris-Heading"><%= options[:title] %></p>
+    </div>
+    <div class="Polaris-Banner__Content" id="Banner2Content">
+      <%= capture(&block) %>
+    </div>
+  </div>
+</div>
