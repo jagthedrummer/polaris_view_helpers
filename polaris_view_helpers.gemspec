@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = PolarisViewHelpers::VERSION
   s.authors     = ["Jeremy Green"]
   s.email       = ["jeremy@octolabs.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of PolarisViewHelpers."
-  s.description = "TODO: Description of PolarisViewHelpers."
+  s.homepage    = "http://www.octolabs.com/"
+  s.summary     = "Rails helpers for Shopify Polaris."
+  s.description = "Rails helpers for Shopify Polaris."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
