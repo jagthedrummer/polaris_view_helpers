@@ -81,5 +81,21 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_annotated_section_input(form, attribute, input, &block)
+      unless attribute.is_a? Array
+        attribute = [attribute]
+      end
+
+      render(
+        partial: 'polaris/annotated_section_input',
+        locals: {
+          form: form,
+          attribute: attribute,
+          input: input,
+          block: block
+        }
+      )
+    end
+
   end
 end

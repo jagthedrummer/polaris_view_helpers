@@ -1,0 +1,35 @@
+<div class="Polaris-Layout__AnnotatedSection">
+  <div class="Polaris-Layout__AnnotationWrapper">
+    <div class="Polaris-Layout__Annotation">
+      <div class="Polaris-TextContainer">
+        <%= capture(&block) %>
+      </div>
+    </div>
+    <div class="Polaris-Layout__AnnotationContent">
+      <div class="Polaris-Card">
+        <div class="Polaris-Card__Section">
+          <div class="Polaris-FormLayout">
+
+            <% attribute.each do |att| %>
+            <div class="Polaris-FormLayout__Item">
+              <div class="">
+                <div class="Polaris-Labelled__LabelWrapper">
+                  <div class="Polaris-Label">
+                    <%= form.label att, class: 'Polaris-Label__Text' %>
+                  </div>
+                </div>
+                <div class="Polaris-TextField">
+                  <%= input %>
+                  <%#= form.send element_type, att, id: "#{form.object.class.name.tableize.singularize}_#{att}", class: "Polaris-TextField__Input" %>
+                  <!--<div class="Polaris-TextField__Backdrop"></div>-->
+                </div>
+              </div>
+            </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
