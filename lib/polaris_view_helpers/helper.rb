@@ -81,6 +81,23 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_annotated_section_select(form, attribute, select_options = [], element_type = :select, &block)
+      unless attribute.is_a? Array
+        attribute = [attribute]
+      end
+
+      render(
+        partial: 'polaris/annotated_section_select',
+        locals: {
+          form: form,
+          attribute: attribute,
+          element_type: element_type,
+          select_options: select_options,
+          block: block
+        }
+      )
+    end
+
     def polaris_annotated_section_input(form, attribute, input, &block)
       unless attribute.is_a? Array
         attribute = [attribute]
