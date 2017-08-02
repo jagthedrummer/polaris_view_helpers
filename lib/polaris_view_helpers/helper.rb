@@ -65,6 +65,41 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_annotated_section(heading:'', description:'', &block)
+      render(
+        partial: 'polaris/annotated_section',
+        locals: {
+          heading: heading,
+          description: description,
+          block: block
+        }
+      )
+    end
+
+    def polaris_form_layout_item(form, att, text = nil, &block)
+      render(
+        partial: 'polaris/form_layout_item',
+        locals: {
+          form: form,
+          att: att,
+          text: text,
+          block: block
+        }
+      )
+    end
+
+    def polaris_form_layout_item_select(form, att, text = nil, &block)
+      render(
+        partial: 'polaris/form_layout_item_select',
+        locals: {
+          form: form,
+          att: att,
+          text: text,
+          block: block
+        }
+      )
+    end
+
     def polaris_annotated_section_text_field(form, attribute, element_type = :text_field, &block)
       unless attribute.is_a? Array
         attribute = [attribute]
