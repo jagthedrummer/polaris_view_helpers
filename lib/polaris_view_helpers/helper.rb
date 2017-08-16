@@ -1,6 +1,27 @@
 module PolarisViewHelpers
   module Helper
 
+    def polaris_tabs(&block)
+      render(
+        partial: 'polaris/tabs',
+        locals: { block: block }
+      )
+    end
+
+    def polaris_tab(text, link_path, active = nil)
+      unless active.present?
+        active = link_path == request.original_fullpath
+      end
+      render(
+        partial: 'polaris/tab',
+        locals: {
+          text: text,
+          link_path: link_path,
+          active: active
+        }
+      )
+    end
+
     def polaris_banner(options, &block)
       render(
         partial: 'polaris/banner',
