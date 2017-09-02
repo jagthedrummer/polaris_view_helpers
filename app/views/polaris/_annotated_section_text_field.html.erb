@@ -15,11 +15,11 @@
               <div class="">
                 <div class="Polaris-Labelled__LabelWrapper">
                   <div class="Polaris-Label">
-                    <%= form.label att, class: 'Polaris-Label__Text' %>
+                    <%= form.label att, options[:label], class: 'Polaris-Label__Text' %>
                   </div>
                 </div>
                 <div class="Polaris-TextField">
-                  <%= form.send element_type, att, id: "#{form.object.class.name.tableize.singularize}_#{att}", class: "Polaris-TextField__Input" %>
+                  <%= form.send element_type, att, id: "#{form.object.class.name.tableize.singularize}_#{att}", class: "Polaris-TextField__Input", placeholder: options[:placeholder] %>
                   <div class="Polaris-TextField__Backdrop"></div>
                 </div>
               </div>

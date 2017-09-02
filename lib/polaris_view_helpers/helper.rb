@@ -121,7 +121,7 @@ module PolarisViewHelpers
       )
     end
 
-    def polaris_annotated_section_text_field(form, attribute, element_type = :text_field, &block)
+    def polaris_annotated_section_text_field(form, attribute, options = {}, element_type = :text_field, &block)
       unless attribute.is_a? Array
         attribute = [attribute]
       end
@@ -132,6 +132,7 @@ module PolarisViewHelpers
           form: form,
           attribute: attribute,
           element_type: element_type,
+          options: options,
           block: block
         }
       )
