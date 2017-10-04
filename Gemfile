@@ -14,4 +14,4 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 gem 'pg', group: :production
-
+gem 'foreman', group: :development
