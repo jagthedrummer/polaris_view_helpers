@@ -4,6 +4,46 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
+<%= polaris_heading "Installing" %>
+
+<p>Add this to your <code>Gemfile</code>.</p>
+<code class="demo"><pre>
+ gem 'polaris_view_helpers'
+</pre></code>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<%= polaris_heading "Including the Polaris CSS" %>
+<p>Add this to the <code>&lt;head&gt;</code> of your <code>layouts/application.html.erb</code> and/or
+<code>layouts/embedded_app.html.erb</code>.</p>
+<code class="demo"><pre>
+ &lt;%= polaris_css =%&gt;
+</pre></code>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<%= polaris_heading "Setting up your page" %>
+<p>In <code>layouts/application.html.erb</code> and/or
+<code>layouts/embedded_app.html.erb</code>you'll want to replace the conent
+between the <code>&lt;body&gt;</code> tags with something like this.</p>
+<code class="demo"><pre>
+  &lt;%= polaris_page do %&gt;
+    &lt;%= polaris_page_header @page_title %&gt;
+    &lt;%= polaris_page_content do %&gt;
+      &lt;%= yield %&gt;
+    &lt;% end %&gt;
+  &lt;% end %&gt;
+</pre></code>
+<p>&nbsp;</p>
+<p>You can set the <code>@page_title</code> variable either in a controller action or in a template to get a header for each page.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
 <%= polaris_heading "Button links" %>
 <%= demo_partial 'button_links' %>
 <%= demo_partial 'button_links_with_modifiers' %>

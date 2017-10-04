@@ -8,7 +8,7 @@ Add this to your `Gemfile`
 gem 'polaris_view_helpers'
 ```
 
-## Using the Polaris CSS
+## Including the Polaris CSS
 
 Add this to your `layouts/application.html.erb` and/or
 `layouts/embedded_app.html.erb`.
