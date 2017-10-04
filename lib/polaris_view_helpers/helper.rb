@@ -33,6 +33,13 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_layout(&block)
+      render(
+        partial: 'polaris/layout',
+        locals: { block: block }
+      )
+    end
+
     def polaris_tabs(&block)
       render(
         partial: 'polaris/tabs',

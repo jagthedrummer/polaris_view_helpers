@@ -3,7 +3,11 @@
     <div class="Polaris-Layout__Annotation">
       <div class="Polaris-TextContainer">
         <h2 class="Polaris-Heading"><%= heading %></h2>
-        <%= description %>
+        <% if description.html_safe? %>
+          <%= description %>
+        <% else %>
+          <p><%= description %></p>
+        <% end %>
       </div>
     </div>
     <div class="Polaris-Layout__AnnotationContent">
