@@ -1,6 +1,38 @@
 module PolarisViewHelpers
   module Helper
 
+    def polaris_css version = '1.6.0'
+      %[<link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/#{version}/polaris.min.css" />].html_safe
+    end
+
+    def polaris_page(&block)
+      render(
+        partial: 'polaris/page',
+        locals: { block: block }
+      )
+    end
+
+    def polaris_page_header(title, &block)
+      render(
+        partial: 'polaris/page_header',
+        locals: { title: title, block: block }
+      )
+    end
+
+    def polaris_heading(title)
+      render(
+        partial: 'polaris/heading',
+        locals: { title: title }
+      )
+    end
+
+    def polaris_page_content(&block)
+      render(
+        partial: 'polaris/page_content',
+        locals: { block: block }
+      )
+    end
+
     def polaris_tabs(&block)
       render(
         partial: 'polaris/tabs',

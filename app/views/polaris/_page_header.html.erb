@@ -1,0 +1,7 @@
+<div class="Polaris-Page__Header">
+  <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge"><%= title %></h1>
+  <% if block.present? %>
+    <%= capture(&block) %>
+  <% end %>
+</div>
+

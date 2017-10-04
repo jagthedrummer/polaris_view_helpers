@@ -3,12 +3,18 @@
 <head>
   <title>Dummy</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= polaris_css %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <%= polaris_page do %>
+    <%= polaris_page_header @page_title %>
+    <%= polaris_page_content do %>
+      <%= yield %>
+    <% end %>
+  <% end %>
 
 </body>
 </html>
