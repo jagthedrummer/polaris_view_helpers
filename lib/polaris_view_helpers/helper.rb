@@ -40,6 +40,13 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_form_layout(&block)
+      render(
+        partial: 'polaris/form_layout',
+        locals: { block: block }
+      )
+    end
+
     def polaris_tabs(&block)
       render(
         partial: 'polaris/tabs',
@@ -155,6 +162,23 @@ module PolarisViewHelpers
           form: form,
           att: att,
           text: text,
+          block: block
+        }
+      )
+    end
+
+    def polaris_text_field(form, attribute, options = {}, element_type = :text_field, &block)
+      unless attribute.is_a? Array
+        attribute = [attribute]
+      end
+
+      render(
+        partial: 'polaris/text_field',
+        locals: {
+          form: form,
+          attribute: attribute,
+          element_type: element_type,
+          options: options,
           block: block
         }
       )
