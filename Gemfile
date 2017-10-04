@@ -15,3 +15,4 @@ gemspec
 
 gem 'pg', group: :production
 gem 'foreman', group: :development
+gem 'sprockets-rails'

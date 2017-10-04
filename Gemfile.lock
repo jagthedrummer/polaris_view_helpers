@@ -117,6 +117,7 @@ DEPENDENCIES
   foreman
   pg
   polaris_view_helpers!
+  sprockets-rails
   sqlite3
 
 BUNDLED WITH
