@@ -23,3 +23,6 @@ test:
 production:
   <<: *default
   adapter: postgresql
+  database: polaris-view-helpers_production
+  username: polaris-view-helpers
+  password: <%= ENV['POLARIS-VIEW-HELPERS_DATABASE_PASSWORD'] %>
