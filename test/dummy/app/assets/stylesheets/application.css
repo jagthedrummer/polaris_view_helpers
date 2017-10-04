@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+code{
+  border-top:1px solid #dedede;
+  border-bottom:1px solid #dedede;
+  display:block;
+}

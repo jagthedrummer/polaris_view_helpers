@@ -1,0 +1,7 @@
+<%= form_with url: root_url do |form| %>
+  <%= polaris_annotated_section( heading: "Some heading", description: "<p>A description of this section</p>".html_safe) do %>
+    <%= polaris_form_layout_item_select form, :timezone do %>
+      <%= form.time_zone_select :timezone, ActiveSupport::TimeZone.us_zones, {include_blank: true}, id: :setting_timezone, class: "Polaris-Select__Input" %>
+    <% end %>
+  <% end %>
+<% end %>

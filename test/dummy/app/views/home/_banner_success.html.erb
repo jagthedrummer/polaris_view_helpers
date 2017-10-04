@@ -1,0 +1,6 @@
+<%= polaris_banner status: 'success', title: 'Good news!' do %>
+  <p>This banner means that something good happened. Maybe you want to do anther thing?</p>
+  <%= polaris_banner_actions do %>
+    <%= polaris_button_link_to "Do a thing!", root_path, modifiers: ['outline'] %>
+  <% end %>
+<% end %>
