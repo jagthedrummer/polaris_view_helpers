@@ -1,7 +1,12 @@
 <li class="Polaris-ResourceList__ItemWrapper">
-  <div class="Polaris-ResourceList__Item Polaris-ResourceList__Item--link">
-    <a aria-describedby="ResourceListItem4" class="Polaris-ResourceList__Link" href="" data-polaris-unstyled="true"></a>
+  <div class="Polaris-ResourceList__Item Polaris-ResourceList__Item--link <%= extra_classes %>">
+    <a aria-describedby="ResourceListItem4" class="Polaris-ResourceList__Link" href="<%= attributes[:url] %>" data-polaris-unstyled="true"></a>
     <div class="Polaris-ResourceList__Container" id="ResourceListItem4">
+      <% if attributes[:media].present? %>
+        <div class="Polaris-ResourceList__Media">
+          <%= attributes[:media] %>
+        </div>
+      <% end %>
       <div class="Polaris-ResourceList__Content">
         <div class="Polaris-ResourceList__Attributes">
           <p class="Polaris-ResourceList__AttributeOne"><%= attributes[:attribute_one] %></p>

@@ -242,9 +242,10 @@ module PolarisViewHelpers
     end
 
     def polaris_resource_list_item(attributes)
+      extra_classes = attributes[:media].present? ? "Polaris-ResourceList__Item--mediaThumbnail Polaris-ResourceList__Item--sizeMedium" : ""
       render(
         partial: 'polaris/resource_list_item',
-        locals: { attributes: attributes }
+        locals: { attributes: attributes, extra_classes: extra_classes }
       )
     end
 
@@ -253,6 +254,13 @@ module PolarisViewHelpers
       render(
         partial: 'polaris/badge',
         locals: { content: content, status: status, extra_class: extra_class }
+      )
+    end
+
+    def polaris_thumbnail(attributes)
+      render(
+        partial: 'polaris/thumbnail',
+        locals: { attributes: attributes }
       )
     end
 
