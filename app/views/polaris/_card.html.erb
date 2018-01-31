@@ -7,4 +7,9 @@
   <div class="Polaris-Card__Section">
     <%= capture(&block) %>
   </div>
+  <% if footer.present? %>
+    <div class="Polaris-Card__Footer">
+      <%= footer %>
+    </div>
+  <% end %>
 </div>

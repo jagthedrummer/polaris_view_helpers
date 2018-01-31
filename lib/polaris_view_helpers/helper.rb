@@ -26,6 +26,13 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_sub_heading(title)
+      render(
+        partial: 'polaris/sub_heading',
+        locals: { title: title }
+      )
+    end
+
     def polaris_page_content(&block)
       render(
         partial: 'polaris/page_content',
@@ -308,10 +315,10 @@ module PolarisViewHelpers
       )
     end
 
-    def polaris_card(heading = nil, &block)
+    def polaris_card(heading = nil, footer: nil, &block)
       render(
         partial: 'polaris/card',
-        locals: { block: block, heading: heading }
+        locals: { block: block, heading: heading, footer: footer }
       )
     end
 
