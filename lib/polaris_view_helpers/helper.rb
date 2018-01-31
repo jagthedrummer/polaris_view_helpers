@@ -40,6 +40,14 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_layout_section(secondary: false, &block)
+      extra_class = secondary ? "Polaris-Layout__Section--secondary" : ""
+      render(
+        partial: 'polaris/layout_section',
+        locals: { block: block, extra_class: extra_class }
+      )
+    end
+
     def polaris_form_layout(&block)
       render(
         partial: 'polaris/form_layout',
@@ -94,6 +102,28 @@ module PolarisViewHelpers
       end
       render(
         partial: 'polaris/button_link_to',
+        locals: {
+          name: name,
+          block: block,
+          additional_classes: additional_classes,
+          link_destination: link_destination,
+          method: button_options[:method]
+        }
+      )
+    end
+
+    def polaris_link_to(name = nil, link_destination = nil, button_options = nil, &block)
+      if block_given?
+        button_options, link_destination, name = link_destination, name, nil
+      end
+      button_options ||= {}
+
+      additional_classes = ""
+      (button_options[:modifiers] || []).each do |modifier|
+        additional_classes += "Polaris-Button--#{modifier} "
+      end
+      render(
+        partial: 'polaris/link_to',
         locals: {
           name: name,
           block: block,
@@ -261,6 +291,34 @@ module PolarisViewHelpers
       render(
         partial: 'polaris/thumbnail',
         locals: { attributes: attributes }
+      )
+    end
+
+    def polaris_description_list(&block)
+      render(
+        partial: 'polaris/description_list',
+        locals: { block: block }
+      )
+    end
+
+    def polaris_description_list_item(term, &block)
+      render(
+        partial: 'polaris/description_list_item',
+        locals: { block: block, term: term }
+      )
+    end
+
+    def polaris_card(heading = nil, &block)
+      render(
+        partial: 'polaris/card',
+        locals: { block: block, heading: heading }
+      )
+    end
+
+    def polaris_footer_help(icon: 'next-help-circle', &block)
+      render(
+        partial: 'polaris/footer_help',
+        locals: { block: block, icon: icon }
       )
     end
 

@@ -1,0 +1,10 @@
+<div class="Polaris-Card">
+  <% if heading.present? %>
+    <div class="Polaris-Card__Header">
+      <h2 class="Polaris-Heading"><%= heading %></h2>
+    </div>
+  <% end %>
+  <div class="Polaris-Card__Section">
+    <%= capture(&block) %>
+  </div>
+</div>
