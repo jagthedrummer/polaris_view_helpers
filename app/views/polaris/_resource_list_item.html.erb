@@ -1,0 +1,23 @@
+<li class="Polaris-ResourceList__ItemWrapper">
+  <div class="Polaris-ResourceList__Item Polaris-ResourceList__Item--link">
+    <a aria-describedby="ResourceListItem4" class="Polaris-ResourceList__Link" href="" data-polaris-unstyled="true"></a>
+    <div class="Polaris-ResourceList__Container" id="ResourceListItem4">
+      <div class="Polaris-ResourceList__Content">
+        <div class="Polaris-ResourceList__Attributes">
+          <p class="Polaris-ResourceList__AttributeOne"><%= attributes[:attribute_one] %></p>
+          <div class="Polaris-ResourceList__AttributeTwo"><%= attributes[:attribute_two] %></div>
+          <div class="Polaris-ResourceList__Badge">
+            <% attributes[:badges].each do |badge| %>
+              <%= badge %>
+            <% end %>
+          </div>
+          <div class="Polaris-ResourceList__AttributeThree">
+            <span class="Polaris-TextStyle--variationSubdued">
+              <%= attributes[:attribute_three] %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>

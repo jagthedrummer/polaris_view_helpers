@@ -234,5 +234,27 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_resource_list(&block)
+      render(
+        partial: 'polaris/resource_list',
+        locals: { block: block }
+      )
+    end
+
+    def polaris_resource_list_item(attributes)
+      render(
+        partial: 'polaris/resource_list_item',
+        locals: { attributes: attributes }
+      )
+    end
+
+    def polaris_badge(content, status = nil)
+      extra_class = status.present? ? "Polaris-Badge--status#{status.to_s.capitalize}" : ""
+      render(
+        partial: 'polaris/badge',
+        locals: { content: content, status: status, extra_class: extra_class }
+      )
+    end
+
   end
 end
