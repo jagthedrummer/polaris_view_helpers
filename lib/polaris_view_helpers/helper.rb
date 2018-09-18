@@ -114,7 +114,8 @@ module PolarisViewHelpers
           block: block,
           additional_classes: additional_classes,
           link_destination: link_destination,
-          method: button_options[:method]
+          method: button_options[:method],
+          confirm: button_options[:confirm]
         }
       )
     end
@@ -136,7 +137,8 @@ module PolarisViewHelpers
           block: block,
           additional_classes: additional_classes,
           link_destination: link_destination,
-          method: button_options[:method]
+          method: button_options[:method],
+          confirm: button_options[:confirm]
         }
       )
     end
