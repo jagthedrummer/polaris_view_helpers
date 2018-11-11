@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Jeremy Green"]
   s.email       = ["jeremy@octolabs.com"]
   s.homepage    = "http://www.octolabs.com/"
+  s.metadata    = { "source_code_uri" => "https://github.com/jlw/polaris_view_helpers" }
   s.summary     = "Rails helpers for Shopify Polaris."
   s.description = "Rails helpers for Shopify Polaris."
   s.license     = "MIT"
