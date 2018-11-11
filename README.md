@@ -26,11 +26,16 @@ If you need to specify a particular version of the CSS you can do so:
 ## Setting up your page
 
 In `layouts/application.html.erb` and/or
-`layouts/embedded_app.html.erb` you'll want to replace the conent
+`layouts/embedded_app.html.erb` you'll want to replace the content
 between the `<body>` tags with something like this:
 
 ```
-  
+<%= polaris_page do %>
+  <%= polaris_page_header @page_title %>
+  <%= polaris_page_content do %>
+    <%= yield %>
+  <% end %>
+<% end %>
 ```
 
 

@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Jeremy Green"]
   s.email       = ["jeremy@octolabs.com"]
   s.homepage    = "http://www.octolabs.com/"
+  s.metadata    = { "source_code_uri" => "https://github.com/jlw/polaris_view_helpers" }
   s.summary     = "Rails helpers for Shopify Polaris."
   s.description = "Rails helpers for Shopify Polaris."
   s.license     = "MIT"
@@ -17,7 +18,8 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 5.1.1"
+  s.add_dependency "rails", "~> 5.1"
 
+  s.add_development_dependency "appraisal"
   s.add_development_dependency "sqlite3"
 end
