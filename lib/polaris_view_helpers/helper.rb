@@ -5,6 +5,21 @@ module PolarisViewHelpers
       %[<link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/#{version}/polaris.min.css" />].html_safe
     end
 
+    def polaris_random_input_name
+      "pri-#{SecureRandom.hex(8)}"
+    end
+
+    def polaris_choice_list(title:, selected:, choices:)
+      render(
+        partial: 'polaris/choice_list',
+        locals: {
+          title: title,
+          selected: selected,
+          choices: choices
+        }
+      )
+    end
+
     def polaris_page(&block)
       render(
         partial: 'polaris/page',
