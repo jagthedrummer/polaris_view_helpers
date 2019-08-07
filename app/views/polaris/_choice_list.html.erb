@@ -1,28 +1,32 @@
 <% listname = polaris_random_input_name %>
-<fieldset class="Polaris-ChoiceList" id="<%= listname %>" aria-invalid="false">
-  <legend class="Polaris-ChoiceList__Title"><%= title %></legend>
-  <ul class="Polaris-ChoiceList__Choices">
-    <% choices.each do |choice| %>
-      <% inputname = polaris_random_input_name %>
-      <li>
-        <label class="Polaris-Choice" for="<%= inputname %>">
-          <span class="Polaris-Choice__Control">
-            <span class="Polaris-RadioButton">
-              <input
-                id="<%= inputname %>"
-                name="<%= listname %>"
-                type="radio"
-                class="Polaris-RadioButton__Input"
-                value="<%= choice[:value] %>"
-                <%= selected == choice[:value] ? "checked" : "" %>
-              >
-              <span class="Polaris-RadioButton__Backdrop"></span>
-              <span class="Polaris-RadioButton__Icon"></span>
-            </span>
-          </span>
-          <span class="Polaris-Choice__Label"><%= choice[:label] %></span>
-        </label>
-      </li>
-    <% end %>
-  </ul>
-</fieldset>
+<div class="Polaris-FormLayout__Item">
+  <div class="">
+    <fieldset class="Polaris-ChoiceList" id="<%= listname %>" aria-invalid="false">
+      <legend class="Polaris-ChoiceList__Title"><%= title %></legend>
+      <ul class="Polaris-ChoiceList__Choices">
+        <% choices.each do |choice| %>
+          <% inputname = polaris_random_input_name %>
+          <li>
+            <label class="Polaris-Choice" for="<%= inputname %>">
+              <span class="Polaris-Choice__Control">
+                <span class="Polaris-RadioButton">
+                  <input
+                    id="<%= inputname %>"
+                    name="<%= listname %>"
+                    type="radio"
+                    class="Polaris-RadioButton__Input"
+                    value="<%= choice[:value] %>"
+                    <%= selected == choice[:value] ? "checked" : "" %>
+                    >
+                    <span class="Polaris-RadioButton__Backdrop"></span>
+                    <span class="Polaris-RadioButton__Icon"></span>
+                </span>
+              </span>
+              <span class="Polaris-Choice__Label"><%= choice[:label] %></span>
+            </label>
+          </li>
+        <% end %>
+      </ul>
+    </fieldset>
+  </div>
+</div>
