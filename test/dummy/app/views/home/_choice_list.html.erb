@@ -1,10 +1,13 @@
-<%= polaris_choice_list(
-  title: "Company name",
-  selected: 'octolabs',
-  choices: [
-    {label: "Luther Crop", value: 'luther_corp'},
-    {label: "OctoLabs", value: 'octolabs'},
-    {label: "Vought", value: 'vought'}
-  ]
-)%>
-
+<%= form_with url: root_url do |form| %>
+  <%= polaris_choice_list(
+    form: form,
+    attribute: 'company_name',
+    title: "Company name",
+    selected: 'octolabs',
+    choices: [
+      {label: "Luther Corp", value: 'luther_corp'},
+      {label: "OctoLabs", value: 'octolabs'},
+      {label: "Vought", value: 'vought'}
+    ]
+  )%>
+<% end %>

@@ -1,4 +1,4 @@
-<% listname = polaris_random_input_name %>
+<% listname = attribute %>
 <div class="Polaris-FormLayout__Item">
   <div class="">
     <fieldset class="Polaris-ChoiceList" id="<%= listname %>" aria-invalid="false">
@@ -10,16 +10,9 @@
             <label class="Polaris-Choice" for="<%= inputname %>">
               <span class="Polaris-Choice__Control">
                 <span class="Polaris-RadioButton">
-                  <input
-                    id="<%= inputname %>"
-                    name="<%= listname %>"
-                    type="radio"
-                    class="Polaris-RadioButton__Input"
-                    value="<%= choice[:value] %>"
-                    <%= selected == choice[:value] ? "checked" : "" %>
-                    >
-                    <span class="Polaris-RadioButton__Backdrop"></span>
-                    <span class="Polaris-RadioButton__Icon"></span>
+                  <%= form.radio_button attribute, choice[:value], checked: selected == choice[:value], class: 'Polaris-RadioButton__Input', id: inputname %>
+                  <span class="Polaris-RadioButton__Backdrop"></span>
+                  <span class="Polaris-RadioButton__Icon"></span>
                 </span>
               </span>
               <span class="Polaris-Choice__Label"><%= choice[:label] %></span>
