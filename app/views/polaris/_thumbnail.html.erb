@@ -2,8 +2,10 @@
   <% if attributes[:src].present? %>
     <img src="<%= attributes[:src] %>" alt="<%= attributes[:alt] %>" class="Polaris-Thumbnail__Image">
   <% else %>
-    <svg class="next-icon next-icon--size-24 next-icon--no-nudge">
-      <use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="#next-photos"></use>
-    </svg>
+    <span class="Polaris-Icon" aria-label="Small document">
+      <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+        <use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="#next-photos"></use>
+      </svg>
+    </span>
   <% end %>
 </span>
