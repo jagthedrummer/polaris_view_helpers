@@ -1,7 +1,7 @@
 module PolarisViewHelpers
   module Helper
 
-    def polaris_css version = '1.6.0'
+    def polaris_css version = '1.12.4'
       %[<link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/#{version}/polaris.min.css" />].html_safe
     end
 
