@@ -1,0 +1,16 @@
+<%= polaris_layout do %>
+  <%= polaris_layout_section do %>
+    <%= polaris_card "This is a card inside a layout" do %>
+      <%= form_with url: root_url do |form| %>
+        Here is some content
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= polaris_layout_section secondary: true do %>
+    <%= polaris_card "This is a card inside a layout" do %>
+      <%= form_with url: root_url do |form| %>
+        Here is some content
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
