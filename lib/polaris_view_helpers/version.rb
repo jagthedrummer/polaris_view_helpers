@@ -1,3 +1,3 @@
 module PolarisViewHelpers
-  VERSION = "0.0.22"
+  VERSION = "1.0.0"
 end
