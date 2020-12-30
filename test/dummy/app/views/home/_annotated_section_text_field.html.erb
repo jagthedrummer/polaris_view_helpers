@@ -1,0 +1,8 @@
+<%= form_with url: root_url do |form| %>
+  <%= polaris_layout do %>
+    <%= polaris_annotated_section_text_field form, :a_text_field_input, {}, :number_field do %>
+      <%= polaris_heading "A heading" %>
+      <p>A description of this text field</p>
+    <% end %>
+  <% end %>
+<% end %>

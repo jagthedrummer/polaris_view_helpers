@@ -1,0 +1,19 @@
+<%= form_with url: root_url do |form| %>
+  <%= polaris_layout do %>
+    <% goal_input = capture do %>
+      <label>
+        <%= form.radio_button(:goal_mode, "currency") %>
+        Option 1
+      </label>
+      <label>
+        <%= form.radio_button(:goal_mode, "units") %>
+        Option 2
+      </label>
+    <% end %>
+
+    <%= polaris_annotated_section_input form, :goal_mode, goal_input do %>
+      <%= polaris_heading "Random inputs in an annotated section" %>
+    <% end %>
+
+  <% end %>
+<% end %>
