@@ -1,28 +1,31 @@
-<li class="Polaris-ResourceList__ItemWrapper">
-  <div class="Polaris-ResourceList__Item Polaris-ResourceList__Item--link <%= extra_classes %>">
-    <a aria-describedby="ResourceListItem4" class="Polaris-ResourceList__Link" href="<%= attributes[:url] %>" data-polaris-unstyled="true"></a>
-    <div class="Polaris-ResourceList__Container" id="ResourceListItem4">
-      <% if attributes[:media].present? %>
-        <div class="Polaris-ResourceList__Media">
-          <%= attributes[:media] %>
+<li class="Polaris-ResourceItem__ListItem <%#= extra_classes %>">
+  <div class="Polaris-ResourceItem__ItemWrapper">
+    <div class="Polaris-ResourceItem" data-href="<%= attributes[:url] %>">
+      <a aria-describedby="" aria-label="<%= attributes[:attribute_one] %>" class="Polaris-ResourceItem__Link" tabindex="" id="" href="<%= attributes[:url] %>" data-polaris-unstyled="true"></a>
+      <div class="Polaris-ResourceItem__Container" id="">
+        <div class="Polaris-ResourceItem__Owned">
+          <% if attributes[:media].present? %>
+            <div class="Polaris-ResourceItem__Media">
+              <%= attributes[:media] %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-      <div class="Polaris-ResourceList__Content">
-        <div class="Polaris-ResourceList__Attributes">
-          <p class="Polaris-ResourceList__AttributeOne"><%= attributes[:attribute_one] %></p>
-          <div class="Polaris-ResourceList__AttributeTwo"><%= attributes[:attribute_two] %></div>
-          <div class="Polaris-ResourceList__Badge">
-            <% attributes[:badges].each do |badge| %>
-              <%= badge %>
-            <% end %>
-          </div>
-          <div class="Polaris-ResourceList__AttributeThree">
-            <span class="Polaris-TextStyle--variationSubdued">
-              <%= attributes[:attribute_three] %>
-            </span>
-          </div>
+        <div class="Polaris-ResourceItem__Content">
+          <h3><span class="Polaris-TextStyle--variationStrong"><%= attributes[:attribute_one] %></span></h3>
+
+          <% if attributes[:attribute_two].present? %>
+            <div><%= attributes[:attribute_two] %></div>
+          <% end %>
+
+          <% if attributes[:attribute_three].present? %>
+            <div><%= attributes[:attribute_three] %></div>
+          <% end %>
+          <% attributes[:badges].each do |badge| %>
+            <%= badge %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </li>
+
