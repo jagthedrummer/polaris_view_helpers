@@ -16,3 +16,7 @@ gemspec
 gem 'pg', group: :production
 gem 'foreman', group: :development
 gem 'sprockets-rails'
+
+
+# Seems like this shouldn't go here, but we need it for heroku...
+ruby '2.7.2'
