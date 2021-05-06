@@ -1,3 +1,3 @@
-<%= link_to link_destination, method: method, confirm: confirm, class: "Polaris-Button #{additional_classes}", 'data-polaris-unstyled': true do %>
+<%= link_to link_destination, data: { method: method, remote: remote }, confirm: confirm, class: "Polaris-Button #{additional_classes}", 'data-polaris-unstyled': true do %>
   <span class="Polaris-Button__Content"><span><%= name || capture(&block) %></span></span>
 <% end %>
