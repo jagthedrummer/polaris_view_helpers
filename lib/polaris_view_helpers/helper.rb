@@ -120,7 +120,7 @@ module PolarisViewHelpers
       end
       button_options ||= {}
 
-      additional_classes = ""
+      additional_classes = button_options[:additional_classes] || ""
       (button_options[:modifiers] || []).each do |modifier|
         additional_classes += "Polaris-Button--#{modifier} "
       end
@@ -133,6 +133,7 @@ module PolarisViewHelpers
           link_destination: link_destination,
           method: button_options[:method],
           remote: button_options[:remote],
+          target: button_options[:target],
           confirm: button_options[:confirm]
         }
       )
