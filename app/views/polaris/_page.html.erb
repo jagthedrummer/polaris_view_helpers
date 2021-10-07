@@ -1,4 +1,6 @@
 <div class="Polaris-Page">
-  <%= capture(&block) %>
+  <%= polaris_css_variable_hack_div do %>
+    <%= capture(&block) %>
+  <% end %>
 </div>
 

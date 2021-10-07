@@ -354,5 +354,12 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_css_variable_hack_div(&block)
+      render(
+        partial: 'polaris/polaris_css_variable_hack_div',
+        locals: { block: block }
+      )
+    end
+
   end
 end
