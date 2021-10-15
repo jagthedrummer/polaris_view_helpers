@@ -9,7 +9,7 @@
         </div>
       <% end %>
       <div class="Polaris-TextField">
-        <%= form.send element_type, att, id: "#{form.object.class.name.tableize.singularize}_#{att}", class: "Polaris-TextField__Input", placeholder: options[:placeholder], value: options[:value] || form.object.send(att) %>
+        <%= form.send element_type, att, id: "#{form.object.class.name.tableize.singularize}_#{att}", class: "Polaris-TextField__Input", placeholder: options[:placeholder], value: options[:value] || form.object&.send(att) %>
         <div class="Polaris-TextField__Backdrop"></div>
       </div>
     </div>
