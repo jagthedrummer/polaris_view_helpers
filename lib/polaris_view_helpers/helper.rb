@@ -1,8 +1,13 @@
 module PolarisViewHelpers
   module Helper
 
-    def polaris_css version = '5.12.0'
-      %[<link rel="stylesheet" href="https://unpkg.com/@shopify/polaris@#{version}/dist/styles.css" />].html_safe
+    def polaris_css version = '7.5.0'
+      major_version = version.split('.').first.to_i
+      if major_version <= 6
+        %[<link rel="stylesheet" href="https://unpkg.com/@shopify/polaris@#{version}/dist/styles.css" />].html_safe
+      else
+        %[<link rel="stylesheet" href="https://unpkg.com/@shopify/polaris@#{version}/build/esm/styles.css" />].html_safe
+      end
     end
 
     def polaris_random_input_name
