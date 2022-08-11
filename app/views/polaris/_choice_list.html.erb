@@ -10,7 +10,7 @@
             <label class="Polaris-Choice" for="<%= inputname %>">
               <span class="Polaris-Choice__Control">
                 <span class="Polaris-RadioButton">
-                  <%= form.radio_button attribute, choice[:value], checked: selected == choice[:value], class: 'Polaris-RadioButton__Input', id: inputname %>
+                  <%= form.radio_button attribute, choice[:value], checked: selected == choice[:value], class: 'Polaris-RadioButton__Input', id: inputname, data: data %>
                   <span class="Polaris-RadioButton__Backdrop"></span>
                   <span class="Polaris-RadioButton__Icon"></span>
                 </span>

@@ -14,7 +14,7 @@ module PolarisViewHelpers
       "pri-#{SecureRandom.hex(8)}"
     end
 
-    def polaris_choice_list(form:, attribute:, title:, selected:, choices:)
+    def polaris_choice_list(form:, attribute:, title:, selected:, choices:, data:)
       render(
         partial: 'polaris/choice_list',
         locals: {
@@ -22,7 +22,8 @@ module PolarisViewHelpers
           attribute: attribute,
           title: title,
           selected: selected,
-          choices: choices
+          choices: choices,
+          data: data
         }
       )
     end
