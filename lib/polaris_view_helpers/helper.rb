@@ -184,10 +184,10 @@ module PolarisViewHelpers
       )
     end
 
-    def polaris_model_errors model
+    def polaris_model_errors model, &block
       render(
         partial: 'polaris/model_errors',
-        locals: { model: model }
+        locals: { model: model, block: block }
       )
     end
 
