@@ -86,8 +86,10 @@ module PolarisViewHelpers
       )
     end
 
-    def polaris_layout_section(secondary: false, &block)
+    def polaris_layout_section(secondary: false, one_half: false, &block)
       extra_class = secondary ? "Polaris-Layout__Section--secondary" : ""
+      extra_class += " "
+      extra_class += one_half ? "Polaris-Layout__Section--oneHalf" : ""
       render(
         partial: 'polaris/layout_section',
         locals: { block: block, extra_class: extra_class }
@@ -362,10 +364,10 @@ module PolarisViewHelpers
       )
     end
 
-    def polaris_card(heading = nil, footer: nil, &block)
+    def polaris_card(heading = nil, footer: nil, extra_class: "", &block)
       render(
         partial: 'polaris/card',
-        locals: { block: block, heading: heading, footer: footer }
+        locals: { block: block, heading: heading, footer: footer, extra_class: extra_class }
       )
     end
 
