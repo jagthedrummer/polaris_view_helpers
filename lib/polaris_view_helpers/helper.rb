@@ -14,6 +14,22 @@ module PolarisViewHelpers
       "pri-#{SecureRandom.hex(8)}"
     end
 
+    def polaris_icon(name = 'CircleTickMajor')
+      render(
+        partial: 'polaris/icon',
+        locals: {
+          name: name,
+        }
+      )
+    end
+
+    def pvh_svg(name)
+      our_path = File.dirname(__FILE__)
+      file_path = File.join(our_path, "..",  "..", "app/views/polaris/icons/#{name}.svg")
+      return File.read(file_path).html_safe if File.exists?(file_path)
+      "(#{name} not found)"
+    end
+
     def polaris_choice_list(form:, attribute:, title:, selected:, choices:, data: nil)
       render(
         partial: 'polaris/choice_list',
