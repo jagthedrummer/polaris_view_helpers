@@ -6,7 +6,9 @@
       <% end %>
     </ul>
 
-    <%= capture(&block) %>
+    <% if block %>
+      <%= capture(&block) %>
+    <% end %>
   <% end %>
   <p>&nbsp;</p>
 <% end %>
