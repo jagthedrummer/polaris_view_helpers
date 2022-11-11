@@ -181,6 +181,8 @@ module PolarisViewHelpers
           additional_classes: additional_classes,
           link_destination: link_destination,
           method: button_options[:method],
+          remote: button_options[:remote],
+          target: button_options[:target],
           confirm: button_options[:confirm]
         }
       )
