@@ -1,0 +1,13 @@
+<%= form_with url: root_url do |form| %>
+  <%= polaris_select(
+    form: form,
+    attribute: 'select_company_name',
+    title: "Company name",
+    selected: 'octolabs',
+    options: [
+      {label: "Luther Corp", value: 'luther_corp'},
+      ["OctoLabs", 'octolabs'],
+      OpenStruct.new({label: "Vought", value: 'vought'})
+    ]
+  )%>
+<% end %>

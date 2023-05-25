@@ -1,0 +1,37 @@
+<% listname = attribute %>
+
+<div class="">
+  <div class="Polaris-Labelled__LabelWrapper">
+    <div class="Polaris-Label">
+      <label id="<%= listname %>_label" for="<%= listname %>" class="Polaris-Label__Text"><%= title %></label>
+    </div>
+  </div>
+  <div class="Polaris-Select">
+    <%= form.collection_select(attribute, options, :value, :label, select_options, {id: listname, class: "Polaris-Select__Input"}) %>
+    <div class="Polaris-Select__Content" aria-hidden="true">
+      <span class="Polaris-Select__SelectedOption" id="<%= listname %>_selected_option_label"><%= selected_label || form.object&.send(attribute) %></span>
+      <span class="Polaris-Select__Icon">
+        <span class="Polaris-Icon">
+          <span class="Polaris-Text--root Polaris-Text--visuallyHidden">
+          </span>
+          <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+            <path d="M7.676 9h4.648c.563 0 .879-.603.53-1.014l-2.323-2.746a.708.708 0 0 0-1.062 0l-2.324 2.746c-.347.411-.032 1.014.531 1.014Zm4.648 2h-4.648c-.563 0-.878.603-.53 1.014l2.323 2.746c.27.32.792.32 1.062 0l2.323-2.746c.349-.411.033-1.014-.53-1.014Z">
+            </path>
+          </svg>
+        </span>
+      </span>
+    </div>
+    <div class="Polaris-Select__Backdrop">
+    </div>
+  </div>
+</div>
+<script charset="utf-8">
+  var selectElement = document.querySelector("#<%= listname %>");
+  console.log('selectElement', selectElement);
+  selectElement.addEventListener("change", function(){
+    var selectElement = document.querySelector("#<%= listname %>");
+    var label = selectElement.options[ selectElement.selectedIndex ].label;
+    var labelElement = document.querySelector("#<%= listname %>_selected_option_label");
+    labelElement.innerText = label;
+  });
+</script>

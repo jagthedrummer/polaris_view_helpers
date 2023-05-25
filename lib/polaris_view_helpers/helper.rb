@@ -44,6 +44,38 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_select(form:, attribute:, title: nil, selected: nil, options:, data: nil, select_options: {})
+      selected ||= form.object&.send(attribute)
+      selected_label = selected
+      our_options = options.map do |option|
+        real_option = option
+        if option.is_a? Array
+          real_option = OpenStruct.new(label: option[0], value: option[1])
+        elsif option.respond_to?(:label) && options.respond_to?(:value)
+          #real_option = option
+        else
+          real_option = OpenStruct.new(label: option[:label], value: option[:value])
+        end
+        if real_option.value.to_s == selected.to_s
+          selected_label = real_option.label
+        end
+        real_option
+      end
+      render(
+        partial: 'polaris/select',
+        locals: {
+          form: form,
+          attribute: attribute,
+          title: title,
+          selected: selected,
+          selected_label: selected_label,
+          options: our_options,
+          select_options: select_options,
+          data: data
+        }
+      )
+    end
+
     def polaris_page(&block)
       render(
         partial: 'polaris/page',
