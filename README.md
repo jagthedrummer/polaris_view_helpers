@@ -12,6 +12,13 @@ gem 'polaris_view_helpers'
 
 <https://polaris-view-helpers.herokuapp.com/>
 
+## Developing
+
+```
+cd test/dumy
+rails s
+```
+
 
 
 This project rocks and uses MIT-LICENSE.
