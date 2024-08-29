@@ -19,4 +19,4 @@ gem 'sprockets-rails'
 
 
 # Seems like this shouldn't go here, but we need it for heroku...
-ruby '2.7.7'
+ruby '3.3.4'
