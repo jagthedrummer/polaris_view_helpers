@@ -1,19 +1,23 @@
 <div class="Polaris-Layout__AnnotatedSection">
   <div class="Polaris-Layout__AnnotationWrapper">
     <div class="Polaris-Layout__Annotation">
-      <div class="Polaris-TextContainer">
-        <h2 class="Polaris-Heading"><%= heading %></h2>
-        <% if description.html_safe? %>
-          <%= description %>
-        <% else %>
-          <p><%= description %></p>
+      <div class="Polaris-TextContainer Polaris-TextContainer--spacingTight">
+        <h2 class="Polaris-Text--root Polaris-Text--headingMd" id="storeDetails"><%= heading %></h2>
+        <% if description.present? %>
+          <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-secondary)">
+            <% if description.html_safe? %>
+              <%= description %>
+            <% else %>
+              <p class="Polaris-Text--root Polaris-Text--bodyMd"><%= description %></p>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
     <div class="Polaris-Layout__AnnotationContent">
-      <div class="Polaris-Card">
-        <div class="Polaris-Card__Section">
-          <div class="Polaris-FormLayout">
+      <div class="Polaris-LegacyCard">
+        <div class="Polaris-LegacyCard__Section Polaris-LegacyCard__FirstSectionPadding Polaris-LegacyCard__LastSectionPadding">
+          <div class="Polaris-BlockStack" style="--pc-block-stack-order:column;--pc-block-stack-gap-xs:var(--p-space-400)">
             <%= capture(&block) %>
           </div>
         </div>
