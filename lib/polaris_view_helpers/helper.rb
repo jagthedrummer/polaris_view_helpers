@@ -170,6 +170,13 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_block_stack(&block)
+      render(
+        partial: 'polaris/block_stack',
+        locals: { block: block }
+      )
+    end
+
     def polaris_button_link_to(name = nil, link_destination = nil, button_options = nil, &block)
       if block_given?
         button_options, link_destination, name = link_destination, name, nil
