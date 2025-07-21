@@ -1,9 +1,11 @@
+<% body_style = "" %>
 <div class="Polaris-ShadowBevel <%= extra_class %>" style="--pc-shadow-bevel-z-index: 32; --pc-shadow-bevel-content-xs: &quot;&quot;; --pc-shadow-bevel-box-shadow-xs: var(--p-shadow-100); --pc-shadow-bevel-border-radius-xs: var(--p-border-radius-300);">
   <div class="Polaris-Box" style="--pc-box-background:var(--p-color-bg-surface);--pc-box-min-height:100%;--pc-box-overflow-x:clip;--pc-box-overflow-y:clip;--pc-box-padding-block-start-xs:var(--p-space-400);--pc-box-padding-block-end-xs:var(--p-space-400);--pc-box-padding-inline-start-xs:var(--p-space-400);--pc-box-padding-inline-end-xs:var(--p-space-400)">
     <% if heading.present? %>
       <h2 class="Polaris-Text--root Polaris-Text--headingSm"><%= heading %></h2>
+      <% body_style = "--pc-box-padding-block-start-xs:var(--p-space-200)" %>
     <% end %>
-    <div class="Polaris-Box" style="--pc-box-padding-block-start-xs:var(--p-space-200)">
+    <div class="Polaris-Box" style="<%= body_style %>">
       <%= capture(&block) %>
     </div>
     <% if footer.present? %>
