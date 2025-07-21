@@ -1,22 +1,27 @@
+<% # TODO: Eventually refactor this to just take an array of buttons instead of left and right %>
 <div class="Polaris-PageActions">
-  <div class="Polaris-Stack Polaris-Stack--spacingTight Polaris-Stack--distributionEqualSpacing">
-    <div class="Polaris-Stack__Item">
-      <% if left.is_a? Array %>
-        <% left.each do |item| %>
+  <div class="Polaris-LegacyStack Polaris-LegacyStack--spacingTight Polaris-LegacyStack--distributionTrailing">
+    <% if left.is_a? Array %>
+      <% left.each do |item| %>
+        <div class="Polaris-LegacyStack__Item">
           <%= item %>
-        <% end %>
-      <% else %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="Polaris-LegacyStack__Item">
         <%= left %>
-      <% end %>
-    </div>
-    <div class="Polaris-Stack__Item">
-      <% if right.is_a? Array %>
-        <% right.each do |item| %>
+      </div>
+    <% end %>
+    <% if right.is_a? Array %>
+      <% right.each do |item| %>
+        <div class="Polaris-LegacyStack__Item">
           <%= item %>
-        <% end %>
-      <% else %>
-        <%= right %>
+        </div>
       <% end %>
-    </div>
+    <% else %>
+      <div class="Polaris-LegacyStack__Item">
+        <%= right %>
+      </div>
+    <% end %>
   </div>
 </div>
