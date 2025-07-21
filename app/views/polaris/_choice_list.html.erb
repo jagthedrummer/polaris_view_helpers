@@ -1,25 +1,27 @@
 <% listname = attribute %>
-<div class="Polaris-FormLayout__Item">
-  <div class="">
-    <fieldset class="Polaris-ChoiceList" id="<%= listname %>" aria-invalid="false">
-      <legend class="Polaris-ChoiceList__Title"><%= title %></legend>
-      <ul class="Polaris-ChoiceList__Choices">
-        <% choices.each do |choice| %>
-          <% inputname = polaris_random_input_name %>
-          <li>
-            <label class="Polaris-Choice" for="<%= inputname %>">
-              <span class="Polaris-Choice__Control">
-                <span class="Polaris-RadioButton">
-                  <%= form.radio_button attribute, choice[:value], checked: selected == choice[:value], class: 'Polaris-RadioButton__Input', id: inputname, data: data %>
-                  <span class="Polaris-RadioButton__Backdrop"></span>
-                  <span class="Polaris-RadioButton__Icon"></span>
+<fieldset class="Polaris-BlockStack Polaris-BlockStack--fieldsetReset" id=":Rq6:" style="--pc-block-stack-order:column;--pc-block-stack-gap-xs:var(--p-space-400);--pc-block-stack-gap-md:var(--p-space-0)" aria-invalid="false">
+  <%#<legend class="Polaris-Box" style="--pc-box-padding-block-end-xs:var(--p-space-0);--pc-box-padding-block-end-md:var(--p-space-100)">%>
+    <%#<span class="Polaris-Text--root Polaris-Text--bodyMd">Company name</span>%>
+  <%#</legend>%>
+  <ul class="Polaris-BlockStack Polaris-BlockStack--listReset" style="--pc-block-stack-order:column;--pc-block-stack-gap-xs:var(--p-space-400);--pc-block-stack-gap-md:var(--p-space-0)">
+    <% choices.each do |choice| %>
+      <% inputname = polaris_random_input_name %>
+      <li>
+        <div class="no-Polaris-Bleed" nostyle="--pc-bleed-margin-block-end-xs:var(--p-space-0)">
+          <label class="Polaris-Choice Polaris-RadioButton__ChoiceLabel" for="<%= inputname %>" style="--pc-choice-fill-xs:100%;--pc-choice-fill-sm:auto">
+            <span class="Polaris-Choice__Control">
+              <span class="Polaris-RadioButton">
+                <%= form.radio_button attribute, choice[:value], checked: selected == choice[:value], class: 'Polaris-RadioButton__Input', id: inputname, data: data %>
+                <span class="Polaris-RadioButton__Backdrop">
                 </span>
               </span>
-              <span class="Polaris-Choice__Label"><%= choice[:label] %></span>
-            </label>
-          </li>
-        <% end %>
-      </ul>
-    </fieldset>
-  </div>
-</div>
+            </span>
+            <span class="Polaris-Choice__Label">
+              <span class="Polaris-Text--root Polaris-Text--bodyMd"><%= choice[:label] %></span>
+            </span>
+          </label>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</fieldset>
