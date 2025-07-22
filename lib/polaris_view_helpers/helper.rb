@@ -1,7 +1,7 @@
 module PolarisViewHelpers
   module Helper
 
-    def polaris_css version = '7.5.0'
+    def polaris_css version = '13.9.5'
       major_version = version.split('.').first.to_i
       if major_version <= 6
         %[<link rel="stylesheet" href="https://unpkg.com/@shopify/polaris@#{version}/dist/styles.css" />].html_safe
@@ -119,9 +119,9 @@ module PolarisViewHelpers
     end
 
     def polaris_layout_section(secondary: false, one_half: false, &block)
-      extra_class = secondary ? "Polaris-Layout__Section--secondary" : ""
+      extra_class = secondary ? " Polaris-Layout__Section--oneThird " : ""
       extra_class += " "
-      extra_class += one_half ? "Polaris-Layout__Section--oneHalf" : ""
+      extra_class += one_half ? " Polaris-Layout__Section--oneHalf " : ""
       render(
         partial: 'polaris/layout_section',
         locals: { block: block, extra_class: extra_class }
@@ -170,6 +170,13 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_block_stack(&block)
+      render(
+        partial: 'polaris/block_stack',
+        locals: { block: block }
+      )
+    end
+
     def polaris_button_link_to(name = nil, link_destination = nil, button_options = nil, &block)
       if block_given?
         button_options, link_destination, name = link_destination, name, nil
@@ -178,7 +185,7 @@ module PolarisViewHelpers
 
       additional_classes = button_options[:additional_classes] || ""
       (button_options[:modifiers] || []).each do |modifier|
-        additional_classes += "Polaris-Button--#{modifier} "
+        additional_classes += " Polaris-Button--#{modifier} "
       end
       render(
         partial: 'polaris/button_link_to',
@@ -361,11 +368,11 @@ module PolarisViewHelpers
       )
     end
 
-    def polaris_resource_list_item(attributes)
+    def polaris_resource_list_item(attributes = {}, &block)
       extra_classes = attributes[:media].present? ? "Polaris-ResourceList__Item--mediaThumbnail Polaris-ResourceList__Item--sizeMedium" : ""
       render(
         partial: 'polaris/resource_list_item',
-        locals: { attributes: attributes, extra_classes: extra_classes }
+        locals: { attributes: attributes, extra_classes: extra_classes, block: block }
       )
     end
 
@@ -401,6 +408,13 @@ module PolarisViewHelpers
     def polaris_card(heading = nil, footer: nil, extra_class: "", &block)
       render(
         partial: 'polaris/card',
+        locals: { block: block, heading: heading, footer: footer, extra_class: extra_class }
+      )
+    end
+
+    def polaris_legacy_card(heading = nil, footer: nil, extra_class: "", &block)
+      render(
+        partial: 'polaris/legacy_card',
         locals: { block: block, heading: heading, footer: footer, extra_class: extra_class }
       )
     end

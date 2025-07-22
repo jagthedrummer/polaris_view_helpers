@@ -4,27 +4,29 @@
     Widget.new(title: "Widget Two")
   ]
 %>
-<%= polaris_resource_list do %>
-  <% @widgets.each do |widget| %>
+<%= polaris_legacy_card do %>
+  <%= polaris_resource_list do %>
+    <% @widgets.each do |widget| %>
+      <%= polaris_resource_list_item({
+        url: root_path,
+        media: polaris_thumbnail(src: "/product.jpg", alt: widget.title),
+        attribute_one: widget.title,
+        attribute_two: nil,
+        attribute_three: nil,
+        badges: [
+          polaris_badge("A badge")
+        ]
+      }) %>
+    <% end %>
     <%= polaris_resource_list_item({
-      url: root_path,
-      media: polaris_thumbnail(src: "/product.jpg", alt: widget.title),
-      attribute_one: widget.title,
-      attribute_two: nil,
-      attribute_three: nil,
-      badges: [
-        polaris_badge("A badge")
-      ]
-    }) %>
+        url: root_path,
+        media: polaris_thumbnail(src: nil, alt: "Some alt text"),
+        attribute_one: "Resource Item Title",
+        attribute_two: "Another attribute",
+        attribute_three: "Third Attribute",
+        badges: [
+          polaris_badge("A different badge")
+        ]
+      }) %>
   <% end %>
-  <%= polaris_resource_list_item({
-      url: root_path,
-      media: polaris_thumbnail(src: nil, alt: "Some alt text"),
-      attribute_one: "Resource Item Title",
-      attribute_two: "Another attribute",
-      attribute_three: "Third Attribute",
-      badges: [
-        polaris_badge("A different badge")
-      ]
-    }) %>
 <% end %>

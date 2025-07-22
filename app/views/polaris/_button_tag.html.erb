@@ -1,4 +1,4 @@
 <% data ||= nil %>
-<%= button_tag type: type, class: "Polaris-Button #{additional_classes}", data: data do %>
-  <span class="Polaris-Button__Content"><span><%= name %></span></span>
+<%= button_tag type: type, class: "Polaris-Button Polaris-Button--pressable Polaris-Button--sizeMedium Polaris-Button--textAlignCenter #{additional_classes}", data: data do %>
+  <span class="Polaris-Text--root Polaris-Text--bodySm Polaris-Text--medium"><%= name %></span>
 <% end %>

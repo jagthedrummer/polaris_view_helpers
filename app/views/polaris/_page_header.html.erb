@@ -1,7 +1,18 @@
-<div class="Polaris-Page__Header">
-  <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge"><%= title %></h1>
-  <% if block.present? %>
-    <%= capture(&block) %>
-  <% end %>
-</div>
+<div class="Polaris-Box" style="--pc-box-padding-block-start-xs:var(--p-space-400);--pc-box-padding-block-start-md:var(--p-space-600);--pc-box-padding-block-end-xs:var(--p-space-400);--pc-box-padding-block-end-md:var(--p-space-600);--pc-box-padding-inline-start-xs:var(--p-space-400);--pc-box-padding-inline-start-sm:var(--p-space-0);--pc-box-padding-inline-end-xs:var(--p-space-400);--pc-box-padding-inline-end-sm:var(--p-space-0);position:relative">
+  <div class="Polaris-Page-Header--noBreadcrumbs Polaris-Page-Header--mediumTitle">
+    <div class="Polaris-Page-Header__Row">
 
+      <div class="Polaris-Page-Header__TitleWrapper">
+        <div class="Polaris-Header-Title__TitleWrapper">
+          <h1 class="Polaris-Header-Title">
+            <span class="Polaris-Text--root Polaris-Text--headingLg Polaris-Text--bold"><%= title %></span>
+          </h1>
+        </div>
+      </div>
+      <% if block.present? %>
+        <%= capture(&block) %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

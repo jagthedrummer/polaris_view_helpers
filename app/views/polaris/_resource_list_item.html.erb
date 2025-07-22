@@ -1,31 +1,53 @@
 <li class="Polaris-ResourceItem__ListItem <%#= extra_classes %>">
   <div class="Polaris-ResourceItem__ItemWrapper">
+
     <div class="Polaris-ResourceItem" data-href="<%= attributes[:url] %>">
-      <a aria-describedby="" aria-label="<%= attributes[:attribute_one] %>" class="Polaris-ResourceItem__Link" tabindex="" id="" href="<%= attributes[:url] %>" data-polaris-unstyled="true"></a>
-      <div class="Polaris-ResourceItem__Container" id="">
-        <div class="Polaris-ResourceItem__Owned">
-          <% if attributes[:media].present? %>
-            <div class="Polaris-ResourceItem__Media">
-              <%= attributes[:media] %>
+      <a aria-describedby="100" aria-label="<%= attributes[:attribute_one] %>" class="Polaris-ResourceItem__Link" tabindex="0" id=":R5ikq6:" href="<%= attributes[:url] %>" data-polaris-unstyled="true">
+      </a>
+      <div class="Polaris-Box" id="100" style="--pc-box-padding-block-start-xs:var(--p-space-300);--pc-box-padding-block-end-xs:var(--p-space-300);--pc-box-padding-inline-start-xs:var(--p-space-300);--pc-box-padding-inline-end-xs:var(--p-space-300);position:relative;z-index:var(--pc-resource-item-content-stacking-order)">
+        <% if block.present? %>
+          <div class="Polaris-ResourceItem__Container" id="">
+            <%= capture(&block) %>
+          </div>
+        <% else %>
+          <div class="Polaris-InlineGrid" style="--pc-inline-grid-grid-template-columns-xs:1fr auto">
+            <div class="Polaris-InlineGrid" style="--pc-inline-grid-grid-template-columns-xs:auto 1fr;--pc-inline-grid-gap-xs:var(--p-space-300)">
+              <div class="Polaris-InlineStack" style="--pc-inline-stack-block-align:start;--pc-inline-stack-wrap:wrap;--pc-inline-stack-gap-xs:var(--p-space-300);--pc-inline-stack-flex-direction-xs:row">
+                <span aria-label="<%= attributes[:attribute_one] %>" role="img" class="Polaris-Avatar Polaris-Avatar--sizeXl">
+                  <span class="Polaris-Avatar__Initials">
+                    <% if attributes[:media].present? %>
+                      <div class="Polaris-ResourceItem__Media">
+                        <%= attributes[:media] %>
+                      </div>
+                    <% end %>
+                    <svg class="Polaris-Avatar__Svg" viewBox="0 0 40 40">
+                      <path fill="none" d="M25.5 13.5C25.5 16.5376 23.0376 19 20 19C16.9624 19 14.5 16.5376 14.5 13.5C14.5 10.4624 16.9624 8 20 8C23.0376 8 25.5 10.4624 25.5 13.5Z" stroke="currentColor" stroke-width="2.5">
+                      </path>
+                      <path fill="none" d="M10.3433 29.682L9.47 31.254C9.03481 32.0373 9.60125 33 10.4974 33H29.5026C30.3988 33 30.9652 32.0373 30.53 31.254L29.6567 29.682C27.7084 26.175 24.0119 24 20 24C15.9882 24 12.2916 26.175 10.3433 29.682Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      </path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <div class="Polaris-InlineStack" style="--pc-inline-stack-block-align:start;--pc-inline-stack-wrap:wrap;--pc-inline-stack-flex-direction-xs:row">
+                <div class="Polaris-Box" style="--pc-box-padding-block-start-xs:var(--p-space-0);--pc-box-padding-block-end-xs:var(--p-space-0);--pc-box-padding-inline-start-xs:var(--p-space-0);--pc-box-padding-inline-end-xs:var(--p-space-0);--pc-box-width:100%">
+                  <h3 class="Polaris-Text--root Polaris-Text--bodyMd Polaris-Text--bold"><%= attributes[:attribute_one] %></h3>
+                  <% if attributes[:attribute_two].present? %>
+                    <div><%= attributes[:attribute_two] %></div>
+                  <% end %>
+
+                  <% if attributes[:attribute_three].present? %>
+                    <div><%= attributes[:attribute_three] %></div>
+                  <% end %>
+                  <% attributes[:badges].each do |badge| %>
+                    <%= badge %>
+                  <% end %>
+                </div>
+              </div>
             </div>
-          <% end %>
-        </div>
-        <div class="Polaris-ResourceItem__Content">
-          <h3><span class="Polaris-TextStyle--variationStrong"><%= attributes[:attribute_one] %></span></h3>
-
-          <% if attributes[:attribute_two].present? %>
-            <div><%= attributes[:attribute_two] %></div>
-          <% end %>
-
-          <% if attributes[:attribute_three].present? %>
-            <div><%= attributes[:attribute_three] %></div>
-          <% end %>
-          <% attributes[:badges].each do |badge| %>
-            <%= badge %>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 </li>
-

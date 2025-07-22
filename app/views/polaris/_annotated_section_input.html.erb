@@ -1,32 +1,32 @@
 <div class="Polaris-Layout__AnnotatedSection">
   <div class="Polaris-Layout__AnnotationWrapper">
     <div class="Polaris-Layout__Annotation">
-      <div class="Polaris-TextContainer">
+      <div class="Polaris-TextContainer Polaris-TextContainer--spacingTight">
         <%= capture(&block) %>
       </div>
     </div>
     <div class="Polaris-Layout__AnnotationContent">
-      <div class="Polaris-Card">
-        <div class="Polaris-Card__Section">
-          <div class="Polaris-FormLayout">
-
+      <div class="Polaris-LegacyCard">
+        <div class="Polaris-LegacyCard__Section Polaris-LegacyCard__FirstSectionPadding Polaris-LegacyCard__LastSectionPadding">
+          <div class="Polaris-BlockStack" style="--pc-block-stack-order:column;--pc-block-stack-gap-xs:var(--p-space-400)">
             <% attribute.each do |att| %>
-            <div class="Polaris-FormLayout__Item">
-              <div class="">
-                <div class="Polaris-Labelled__LabelWrapper">
-                  <div class="Polaris-Label">
-                    <%= form.label att, class: 'Polaris-Label__Text' %>
+              <div class="Polaris-FormLayout__Item Polaris-FormLayout--grouped">
+                <div class="">
+                  <div class="Polaris-Labelled__LabelWrapper">
+                    <div class="Polaris-Label">
+                      <%= form.label att, class: 'Polaris-Label__Text' %>
+                    </div>
+                  </div>
+                  <div class="Polaris-Connected">
+                    <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
+                      <div class="Polaris-TextField">
+                        <%= input %>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="Polaris-TextField">
-                  <%= input %>
-                  <%#= form.send element_type, att, id: "#{form.object.class.name.tableize.singularize}_#{att}", class: "Polaris-TextField__Input" %>
-                  <!--<div class="Polaris-TextField__Backdrop"></div>-->
-                </div>
               </div>
-            </div>
             <% end %>
-
           </div>
         </div>
       </div>
