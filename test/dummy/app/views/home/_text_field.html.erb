@@ -1,6 +1,8 @@
 <%= form_with url: root_url do |form| %>
   <%= polaris_form_layout do %>
-    <%= polaris_text_field form, :name %>
-    <%= polaris_text_field form, :email, {}, :email_field %>
+    <%= polaris_block_stack do %>
+      <%= polaris_text_field form, :name %>
+      <%= polaris_text_field form, :email, {}, :email_field %>
+    <% end %>
   <% end %>
 <% end %>
