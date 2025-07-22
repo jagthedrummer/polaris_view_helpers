@@ -185,7 +185,7 @@ module PolarisViewHelpers
 
       additional_classes = button_options[:additional_classes] || ""
       (button_options[:modifiers] || []).each do |modifier|
-        additional_classes += "Polaris-Button--#{modifier} "
+        additional_classes += " Polaris-Button--#{modifier} "
       end
       render(
         partial: 'polaris/button_link_to',
