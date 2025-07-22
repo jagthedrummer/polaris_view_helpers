@@ -1,7 +1,7 @@
-<li role="presentation" class="Polaris-Tabs__TabContainer">
+<li class="Polaris-Tabs__TabContainer" role="presentation">
   <%= link_to link_path, class: "Polaris-Tabs__Tab #{'Polaris-Tabs__Tab--active' if active}" do %>
-    <span class="Polaris-Tabs__Title"><%= text %></span>
+    <div class="Polaris-InlineStack" style="--pc-inline-stack-align: center; --pc-inline-stack-block-align: center; --pc-inline-stack-wrap: nowrap; --pc-inline-stack-gap-xs: var(--p-space-200); --pc-inline-stack-flex-direction-xs: row;">
+      <span class="Polaris-Text--root Polaris-Text--bodySm Polaris-Text--medium"><%= text %></span>
+    </div>
   <% end %>
 </li>
-
-

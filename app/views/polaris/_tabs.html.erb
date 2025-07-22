@@ -1,5 +1,11 @@
-<div class="Polaris-Tabs__Wrapper">
-  <ul role="tablist" class="Polaris-Tabs">
-    <%= capture(&block) %>
-  </ul>
+<div class="Polaris-Tabs__Outer">
+  <div class="Polaris-Box" style="--pc-box-padding-block-start-md:var(--p-space-200);--pc-box-padding-block-end-md:var(--p-space-200);--pc-box-padding-inline-start-md:var(--p-space-200);--pc-box-padding-inline-end-md:var(--p-space-200)">
+    <div class="Polaris-Tabs__Wrapper">
+      <div class="Polaris-Tabs__ButtonWrapper">
+        <ul class="Polaris-Tabs" data-tabs-focus-catchment="true" role="tablist">
+          <%= capture(&block) %>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
