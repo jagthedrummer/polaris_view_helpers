@@ -1,10 +1,10 @@
 <div class="Polaris-Banner Polaris-Banner--withinPage" tabindex="0" role="alert" aria-live="polite">
   <div class="Polaris-Box" style="--pc-box-width:100%">
     <div class="Polaris-BlockStack" style="--pc-block-stack-align:space-between;--pc-block-stack-order:column">
-      <div class="Polaris-Box" style="--pc-box-color: var(--p-color-text-warning-on-bg-fill); --pc-box-background: var(--p-color-bg-fill-warning); --pc-box-padding-block-start-xs: var(--p-space-300); --pc-box-padding-block-end-xs: var(--p-space-300); --pc-box-padding-inline-start-xs: var(--p-space-300); --pc-box-padding-inline-end-xs: var(--p-space-300); --pc-box-border-start-start-radius: var(--p-border-radius-300); --pc-box-border-start-end-radius: var(--p-border-radius-300);">
+      <div class="Polaris-Box" style="--pc-box-color: var(--p-color-text-<%= options[:status] %>-on-bg-fill); --pc-box-background: var(--p-color-bg-fill-<%= options[:status] %>); --pc-box-padding-block-start-xs: var(--p-space-300); --pc-box-padding-block-end-xs: var(--p-space-300); --pc-box-padding-inline-start-xs: var(--p-space-300); --pc-box-padding-inline-end-xs: var(--p-space-300); --pc-box-border-start-start-radius: var(--p-border-radius-300); --pc-box-border-start-end-radius: var(--p-border-radius-300);">
         <div class="Polaris-InlineStack" style="--pc-inline-stack-align:space-between;--pc-inline-stack-block-align:center;--pc-inline-stack-wrap:nowrap;--pc-inline-stack-gap-xs:var(--p-space-200);--pc-inline-stack-flex-direction-xs:row">
           <div class="Polaris-InlineStack" style="--pc-inline-stack-wrap:nowrap;--pc-inline-stack-gap-xs:var(--p-space-100);--pc-inline-stack-flex-direction-xs:row">
-            <span class="Polaris-Banner--textWarningOnBgFill">
+            <span class="Polaris-Banner--text<%= options[:status].capitalize %>OnBgFill">
               <%= render "polaris/banner_icons/#{options[:status]}" %>
             </span>
             <h2 class="Polaris-Text--root Polaris-Text--headingSm Polaris-Text--break"><%= options[:title] %></h2>

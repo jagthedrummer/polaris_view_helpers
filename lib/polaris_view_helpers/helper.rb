@@ -119,9 +119,9 @@ module PolarisViewHelpers
     end
 
     def polaris_layout_section(secondary: false, one_half: false, &block)
-      extra_class = secondary ? "Polaris-Layout__Section--secondary" : ""
+      extra_class = secondary ? " Polaris-Layout__Section--oneThird " : ""
       extra_class += " "
-      extra_class += one_half ? "Polaris-Layout__Section--oneHalf" : ""
+      extra_class += one_half ? " Polaris-Layout__Section--oneHalf " : ""
       render(
         partial: 'polaris/layout_section',
         locals: { block: block, extra_class: extra_class }
