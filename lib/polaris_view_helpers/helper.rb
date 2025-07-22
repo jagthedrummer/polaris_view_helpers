@@ -1,7 +1,7 @@
 module PolarisViewHelpers
   module Helper
 
-    def polaris_css version = '7.5.0'
+    def polaris_css version = '13.9.5'
       major_version = version.split('.').first.to_i
       if major_version <= 6
         %[<link rel="stylesheet" href="https://unpkg.com/@shopify/polaris@#{version}/dist/styles.css" />].html_safe
