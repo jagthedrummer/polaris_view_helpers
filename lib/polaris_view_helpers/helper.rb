@@ -412,6 +412,13 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_legacy_card(heading = nil, footer: nil, extra_class: "", &block)
+      render(
+        partial: 'polaris/legacy_card',
+        locals: { block: block, heading: heading, footer: footer, extra_class: extra_class }
+      )
+    end
+
     def polaris_footer_help(icon: 'next-help-circle', &block)
       render(
         partial: 'polaris/footer_help',
