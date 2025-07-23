@@ -1,3 +1,3 @@
-<%= link_to link_destination, data: { method: method, remote: remote }, confirm: confirm, class: "Polaris-Button Polaris-Button--pressable Polaris-Button--sizeMedium Polaris-Button--textAlignCenter #{additional_classes}", target: target, 'data-polaris-unstyled': true do %>
+<%= link_to link_destination, data: { method: method, remote: remote, confirm: confirm },  class: "Polaris-Button Polaris-Button--pressable Polaris-Button--sizeMedium Polaris-Button--textAlignCenter #{additional_classes}", target: target, 'data-polaris-unstyled': true do %>
   <span class="Polaris-Text--root Polaris-Text--bodySm Polaris-Text--medium"><%= name || capture(&block) %></span>
 <% end %>
