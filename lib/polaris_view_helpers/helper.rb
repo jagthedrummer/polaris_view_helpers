@@ -76,6 +76,20 @@ module PolarisViewHelpers
       )
     end
 
+    def polaris_inline_error(form, attribute, error)
+      render(
+        partial: 'polaris/inline_error',
+        locals: { form: form, attribute: attribute, error: error }
+      )
+    end
+
+    def polaris_form_element_errors(form, attribute)
+      render(
+        partial: 'polaris/form_element_errors',
+        locals: { form: form, attribute: attribute }
+      )
+    end
+
     def polaris_page(&block)
       render(
         partial: 'polaris/page',
@@ -291,6 +305,9 @@ module PolarisViewHelpers
     end
 
     def polaris_text_field(form, attribute, options = {}, element_type = :text_field, &block)
+
+      additional_classes = options[:additional_classes] || ""
+
       unless attribute.is_a? Array
         attribute = [attribute]
       end
@@ -300,6 +317,7 @@ module PolarisViewHelpers
         locals: {
           form: form,
           attribute: attribute,
+          additional_classes: additional_classes,
           element_type: element_type,
           options: options,
           block: block

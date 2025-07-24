@@ -1,0 +1,7 @@
+<% if form.object&.errors && form.object&.errors[attribute.to_sym]&.any? %>
+  <div class="Polaris-Labelled__Error">
+    <% form.object.errors[attribute.to_sym].each do |error| %>
+      <%= polaris_inline_error form, attribute, error %>
+    <% end %>
+  </div>
+<% end %>

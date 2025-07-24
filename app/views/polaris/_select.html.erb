@@ -6,7 +6,7 @@
       <label id="<%= listname %>_label" for="<%= listname %>" class="Polaris-Label__Text"><%= title %></label>
     </div>
   </div>
-  <div class="Polaris-Select">
+  <div class="Polaris-Select <%=  form.object.errors[attribute.to_sym].any? ? "Polaris-Select--error" : "" %>">
     <%= form.collection_select(attribute, options, :value, :label, select_options, {id: listname, class: "Polaris-Select__Input"}) %>
     <div class="Polaris-Select__Content" aria-hidden="true">
       <span class="Polaris-Select__SelectedOption" id="<%= listname %>_selected_option_label"><%= selected_label || form.object&.send(attribute) %></span>
@@ -24,6 +24,7 @@
     <div class="Polaris-Select__Backdrop">
     </div>
   </div>
+  <%= polaris_form_element_errors form, attribute %>
 </div>
 <script charset="utf-8">
   var selectElement = document.querySelector("#<%= listname %>");

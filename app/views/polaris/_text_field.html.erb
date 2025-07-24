@@ -8,10 +8,11 @@
           </div>
         </div>
       <% end %>
-      <div class="Polaris-TextField">
-        <%= form.send element_type, att, id: "#{form.object.class.name.tableize.singularize}_#{att}", class: "Polaris-TextField__Input", placeholder: options[:placeholder], value: (options[:value] || form.object&.send(att)), data: options[:data] %>
+      <div class="Polaris-TextField <%= (form.object&.errors && form.object&.errors[att.to_sym]&.any?) ? "Polaris-TextField--error" : "" %>">
+        <%= form.send element_type, att, id: "#{form.object.class.name.tableize.singularize}_#{att}", class: "Polaris-TextField__Input #{additional_classes}", placeholder: options[:placeholder], value: (options[:value] || form.object&.send(att)), data: options[:data] %>
         <div class="Polaris-TextField__Backdrop"></div>
       </div>
+      <%= polaris_form_element_errors form, att %>
     </div>
   </div>
 <% end %>
