@@ -1,6 +1,12 @@
 module PolarisViewHelpers
   module Helper
 
+    # This prevent field_with_error divs from showing up and messing with Polaris styling
+    # https://stackoverflow.com/questions/7454682/customizing-field-with-errors/76291804#76291804
+    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+      html_tag
+    end
+
     def polaris_css version = '13.9.5'
       major_version = version.split('.').first.to_i
       if major_version <= 6
