@@ -19,10 +19,11 @@
                   </div>
                   <div class="Polaris-Connected">
                     <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                      <div class="Polaris-TextField">
+                      <div class="Polaris-TextField  <%= (form.object&.errors && form.object&.errors[att.to_sym]&.any?) ? "Polaris-TextField--error" : "" %>">
                         <%= form.send element_type, att, id: "#{form.object.class.name.tableize.singularize}_#{att}", class: "Polaris-TextField__Input", placeholder: options[:placeholder] %>
                         <div class="Polaris-TextField__Backdrop"></div>
                       </div>
+                      <%= polaris_form_element_errors form, att %>
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,12 @@
 module PolarisViewHelpers
   module Helper
 
+    # This prevent field_with_error divs from showing up and messing with Polaris styling
+    # https://stackoverflow.com/questions/7454682/customizing-field-with-errors/76291804#76291804
+    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+      html_tag
+    end
+
     def polaris_css version = '13.9.5'
       major_version = version.split('.').first.to_i
       if major_version <= 6
@@ -73,6 +79,20 @@ module PolarisViewHelpers
           select_options: select_options,
           data: data
         }
+      )
+    end
+
+    def polaris_inline_error(form, attribute, error)
+      render(
+        partial: 'polaris/inline_error',
+        locals: { form: form, attribute: attribute, error: error }
+      )
+    end
+
+    def polaris_form_element_errors(form, attribute)
+      render(
+        partial: 'polaris/form_element_errors',
+        locals: { form: form, attribute: attribute }
       )
     end
 
@@ -291,6 +311,9 @@ module PolarisViewHelpers
     end
 
     def polaris_text_field(form, attribute, options = {}, element_type = :text_field, &block)
+
+      additional_classes = options[:additional_classes] || ""
+
       unless attribute.is_a? Array
         attribute = [attribute]
       end
@@ -300,6 +323,7 @@ module PolarisViewHelpers
         locals: {
           form: form,
           attribute: attribute,
+          additional_classes: additional_classes,
           element_type: element_type,
           options: options,
           block: block

@@ -1,0 +1,15 @@
+<div id="<%= attribute.to_s.underscore %>_error" class="Polaris-InlineError">
+  <div class="Polaris-InlineError__Icon">
+    <span class="Polaris-Icon">
+      <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+        <path d="M10 6a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75Z">
+        </path>
+        <path d="M11 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">
+        </path>
+        <path fill-rule="evenodd" d="M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z">
+        </path>
+      </svg>
+    </span>
+  </div>
+  <span class="Polaris-Text--root Polaris-Text--bodyMd"><%= attribute.to_s.humanize %> <%= error %></span>
+</div>
