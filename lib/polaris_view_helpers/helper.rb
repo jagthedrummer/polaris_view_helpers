@@ -230,7 +230,7 @@ module PolarisViewHelpers
 
       additional_classes = ""
       (button_options[:modifiers] || []).each do |modifier|
-        additional_classes += "Polaris-Button--#{modifier} "
+        additional_classes += "Polaris-Link--#{modifier} "
       end
       render(
         partial: 'polaris/link_to',
@@ -429,10 +429,10 @@ module PolarisViewHelpers
       )
     end
 
-    def polaris_card(heading = nil, footer: nil, extra_class: "", &block)
+    def polaris_card(heading = nil, footer: nil, extra_class: "", heading_actions: nil, &block)
       render(
         partial: 'polaris/card',
-        locals: { block: block, heading: heading, footer: footer, extra_class: extra_class }
+        locals: { block: block, heading: heading, footer: footer, extra_class: extra_class, heading_actions: heading_actions }
       )
     end
 
