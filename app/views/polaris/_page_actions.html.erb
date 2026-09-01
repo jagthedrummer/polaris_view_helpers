@@ -2,7 +2,7 @@
 <div class="Polaris-PageActions">
   <div class="Polaris-LegacyStack Polaris-LegacyStack--spacingTight Polaris-LegacyStack--distributionTrailing">
     <% if left.is_a? Array %>
-      <% left.each do |item| %>
+      <% left.compact_blank.each do |item| %>
         <div class="Polaris-LegacyStack__Item">
           <%= item %>
         </div>
@@ -13,7 +13,7 @@
       </div>
     <% end %>
     <% if right.is_a? Array %>
-      <% right.each do |item| %>
+      <% right.compact_blank.each do |item| %>
         <div class="Polaris-LegacyStack__Item">
           <%= item %>
         </div>
